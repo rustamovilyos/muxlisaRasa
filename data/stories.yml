@@ -6,7 +6,7 @@ stories:
   steps:
   - intent: salomlashish
   - action: utter_salomlashish
-  - intent: ozini_tanishtirish
+  - intent: ozingni_tanishtir
   - action: utter_tanishtirish
 
 - story: turn on presentation
@@ -33,7 +33,7 @@ stories:
   steps:
     - intent: salomlashish
     - action: utter_salomlashish
-    - intent: ozini_tanishtirish
+    - intent: ozingni_tanishtir
     - action: utter_tanishtirish
     - intent: about_uzb
     - action: utter_about_uzb
@@ -46,7 +46,7 @@ stories:
   steps:
     - intent: salomlashish
     - action: utter_salomlashish
-    - intent: ozini_tanishtirish
+    - intent: ozingni_tanishtir
     - action: utter_tanishtirish
     - intent: about_uzb_independence
     - action: utter_about_uzb_independence
@@ -57,7 +57,7 @@ stories:
   steps:
     - intent: salomlashish
     - action: utter_salomlashish
-    - intent: ozini_tanishtirish
+    - intent: ozingni_tanishtir
     - action: utter_tanishtirish
     - intent: about_uzb
     - action: utter_about_uzb
@@ -68,17 +68,18 @@ stories:
   steps:
     - intent: salomlashish
     - action: utter_salomlashish
-    - intent: ozini_tanishtirish
+    - intent: ozingni_tanishtir
     - action: utter_tanishtirish
     - intent: about_AI
     - action: utter_about_AI
     - intent: rahmat
+    - action: utter_rahmat
 
 - story: about author
   steps:
       - intent: salomlashish
       - action: utter_salomlashish
-      - intent: ozini_tanishtirish
+      - intent: ozingni_tanishtir
       - action: utter_tanishtirish
       - intent: about_author
       - action: utter_about_author
@@ -89,7 +90,7 @@ stories:
   steps:
       - intent: salomlashish
       - action: utter_salomlashish
-      - intent: ozini_tanishtirish
+      - intent: ozingni_tanishtir
       - action: utter_tanishtirish
       - intent: about_uzinfocom
       - action: utter_about_uzinfocom
@@ -100,7 +101,7 @@ stories:
   steps:
       - intent: salomlashish
       - action: utter_salomlashish
-      - intent: ozini_tanishtirish
+      - intent: ozingni_tanishtir
       - action: utter_tanishtirish
       - intent: about_MyID
       - action: utter_about_MyID

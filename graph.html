@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Rasa Core Visualisation</title>
+    <script src="https://dagrejs.github.io/project/dagre-d3/latest/dagre-d3.min.js"></script>
+    <script src="https://dagrejs.github.io/project/dagre/latest/dagre.min.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://dagrejs.github.io/project/graphlib-dot/v0.6.3/graphlib-dot.js"></script>
+</head>
+<body>
+<div id="errormsg" style="color: #b00"></div>
+<svg>
+    <style id="graph-style">
+        .node.invisible > rect {
+            display: none;
+        }
+
+        .node.start > rect {
+            fill: #7f7;
+            rx: 30;
+            ry: 18;
+        }
+
+        .node.end > rect {
+            fill: #f77;
+            rx: 30;
+            ry: 18;
+        }
+
+        .node:not(.active) > rect, .node:not(.active) > .label {
+            opacity: 0.4;
+        }
+
+        .edgePath:not(.active) path {
+            opacity: 0.4;
+        }
+
+        .node.ellipsis > rect {
+            fill: #CCC;
+        }
+
+        .node.intent > rect {
+            fill: #7ff;
+        }
+
+        .node.dashed > rect {
+            stroke-dasharray: 5;
+        }
+
+        text {
+            font-weight: 300;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serf, serif;
+            font-size: 14px;
+            color: #1f1d1d;
+        }
+
+        .node rect {
+            stroke: #444;
+            fill: #fff;
+            stroke-width: 1.5px;
+        }
+
+        .edgePath path {
+            stroke: #333;
+            stroke-width: 1.5px;
+        }
+
+        svg {
+            position: fixed;
+            top: 10px;
+            left: 0;
+            height: 100%;
+            width: 100%
+        }
+    </style>
+    <g></g>
+</svg>
+<script>
+
+  function serveGraph() {
+    let oldInputGraphValue;
+
+    const url = 'visualization.dot';
+    const refreshInterval = 500;
+
+    // trigger a refresh by fetching an updated graph
+    setInterval(function () {
+      fetch(url).then(r => r.text()).then(dot => {
+        document.getElementById('errormsg').innerHTML = '';
+        if (oldInputGraphValue === dot) return;
+
+        oldInputGraphValue = dot;
+        drawGraph(dot);
+      }).catch(err => {
+        document.getElementById('errormsg').innerHTML =
+          'Failed to update plot. (' + err.message + ')';
+      });
+    }, refreshInterval);
+  }
+
+  function drawGraph(graph) {
+    let g = graphlibDot.read(graph);
+    // Set margins, if not present
+    if (!g.graph().hasOwnProperty("marginx") &&
+      !g.graph().hasOwnProperty("marginy")) {
+      g.graph().marginx = 20;
+      g.graph().marginy = 20;
+    }
+    g.graph().transition = function (selection) {
+      return selection.transition().duration(300);
+    };
+    // Render the graph into svg g
+    d3.select("svg g").call(render, g);
+  }
+  // Set up zoom support
+  const svg = d3.select("svg"),
+    inner = d3.select("svg g"),
+    zoom = d3.zoom().on("zoom", function () {
+      inner.attr("transform", d3.event.transform);
+    });
+  svg.call(zoom);
+
+  // Create and configure the renderer
+  const render = dagreD3.render();
+
+  let isClient = false;
+  isClient = true;
+
+  if (isClient) {
+    // Mark all nodes and their edges as active
+    cssRules = document.getElementById('graph-style').sheet.cssRules;
+    cssRules[3].style.opacity = 1;
+    cssRules[4].style.opacity = 1;
+
+    let graph;
+    graph = `digraph  {
+0 [class="start active", fillcolor=green, fontsize=12, label=START, style=filled];
+"-1" [class=end, fillcolor=red, fontsize=12, label=END, style=filled];
+1 [class="", fontsize=12, label=utter_salomlashish];
+2 [class="", fontsize=12, label=utter_tanishtirish];
+4 [class="", fontsize=12, label=utter_taqdimot];
+5 [class="", fontsize=12, label=utter_rahmat];
+7 [class="", fontsize=12, label=utter_about_ICT_WEEK];
+12 [class="", fontsize=12, label=utter_about_uzb];
+13 [class="", fontsize=12, label=utter_about_uzb_independence];
+25 [class="", fontsize=12, label=utter_about_AI];
+29 [class="", fontsize=12, label=utter_about_author];
+33 [class="", fontsize=12, label=utter_about_uzinfocom];
+37 [class="", fontsize=12, label=utter_about_MyID];
+39 [class="", fontsize=12, label="..."];
+40 [class="", fontsize=12, label=utter_about_uzinfocom];
+42 [class="", fontsize=12, label=utter_about_MyID];
+44 [class="", fontsize=12, label=utter_salomlashish];
+46 [class="", fontsize=12, label=utter_tanishtirish];
+50 [class="", fontsize=12, label=utter_taqdimot];
+52 [class="", fontsize=12, label=utter_about_ICT_WEEK];
+54 [class="", fontsize=12, label=utter_about_uzb];
+56 [class="", fontsize=12, label=utter_about_uzb_independence];
+58 [class="", fontsize=12, label=utter_about_AI];
+60 [class="", fontsize=12, label=utter_about_author];
+61 [class=intent, fillcolor=lightblue, label="shettamisan?", shape=rect, style=filled];
+62 [class=intent, fillcolor=lightblue, label="o’zingni mehmonlarga tanishtirsang", shape=rect, style=filled];
+63 [class=intent, fillcolor=lightblue, label="Taqdimotni yoqib ber", shape=rect, style=filled];
+64 [class=intent, fillcolor=lightblue, label="ICT WEEK to'g'risida gapirib ber", shape=rect, style=filled];
+65 [class=intent, fillcolor=lightblue, label="O'zbekiston to'g'risida nimani bilasan?", shape=rect, style=filled];
+66 [class=intent, fillcolor=lightblue, label="Sun'iy intellekt haqida", shape=rect, style=filled];
+67 [class=intent, fillcolor=lightblue, label="Seni kim yaratdi?", shape=rect, style=filled];
+68 [class=intent, fillcolor=lightblue, label="Uzinfocom bu nima", shape=rect, style=filled];
+69 [class=intent, fillcolor=lightblue, label="MyID bu nima", shape=rect, style=filled];
+70 [class=intent, fillcolor=lightblue, label="O'zbekiston haqida", shape=rect, style=filled];
+71 [class=intent, fillcolor=lightblue, label="Tashakkur, Muxlisa", shape=rect, style=filled];
+72 [class=intent, fillcolor=lightblue, label="Yaxshi, endi taqdimotimni yoqib ber", shape=rect, style=filled];
+73 [class=intent, fillcolor=lightblue, label="O'zbekiston to'g'risida", shape=rect, style=filled];
+74 [class=intent, fillcolor=lightblue, label=Tashakkur, shape=rect, style=filled];
+75 [class=intent, fillcolor=lightblue, label="rahmat Muxlisa", shape=rect, style=filled];
+76 [class=intent, fillcolor=lightblue, label=minnatdorman, shape=rect, style=filled];
+77 [class=intent, fillcolor=lightblue, label=Tashakkur, shape=rect, style=filled];
+78 [class=intent, fillcolor=lightblue, label="Tashakkur, Muxlisa", shape=rect, style=filled];
+79 [class=intent, fillcolor=lightblue, label=raxmat, shape=rect, style=filled];
+80 [class=intent, fillcolor=lightblue, label="Uzinfocom bu nima", shape=rect, style=filled];
+81 [class=intent, fillcolor=lightblue, label=MyID, shape=rect, style=filled];
+82 [class=intent, fillcolor=lightblue, label="qalaysan?", shape=rect, style=filled];
+83 [class=intent, fillcolor=lightblue, label="Isming kim?", shape=rect, style=filled];
+84 [class=intent, fillcolor=lightblue, label="tashakkur, muxlisa", shape=rect, style=filled];
+85 [class=intent, fillcolor=lightblue, label="Taqdimotni yoqib ber", shape=rect, style=filled];
+86 [class=intent, fillcolor=lightblue, label="ICT WEEK bo'yicha nimani bilasan?", shape=rect, style=filled];
+87 [class=intent, fillcolor=lightblue, label="O'zbekiston haqida nimani bilasan?", shape=rect, style=filled];
+88 [class=intent, fillcolor=lightblue, label="O'zbekiston qachon mustaqillikka erishdi?", shape=rect, style=filled];
+89 [class=intent, fillcolor=lightblue, label="Sun'iy intellekt bu nima?", shape=rect, style=filled];
+90 [class=intent, fillcolor=lightblue, label="Seni kim yaratdi?", shape=rect, style=filled];
+0 -> 39  [class="", key=NONE, label=""];
+0 -> 61  [class="", key=0];
+1 -> 62  [class="", key=0];
+1 -> 63  [class="", key=0];
+1 -> 64  [class="", key=0];
+2 -> "-1"  [class="", key=NONE, label=""];
+2 -> 65  [class="", key=0];
+2 -> 66  [class="", key=0];
+2 -> 67  [class="", key=0];
+2 -> 68  [class="", key=0];
+2 -> 69  [class="", key=0];
+2 -> 70  [class="", key=0];
+4 -> 71  [class="", key=0];
+5 -> "-1"  [class="", key=NONE, label=""];
+7 -> 72  [class="", key=0];
+12 -> 73  [class="", key=0];
+12 -> 74  [class="", key=0];
+13 -> 75  [class="", key=0];
+25 -> 76  [class="", key=0];
+29 -> 77  [class="", key=0];
+33 -> 78  [class="", key=0];
+37 -> 79  [class="", key=0];
+39 -> 80  [class="", key=0];
+39 -> 81  [class="", key=0];
+39 -> 82  [class="", key=0];
+39 -> 83  [class="", key=0];
+39 -> 84  [class="", key=0];
+39 -> 85  [class="", key=0];
+39 -> 86  [class="", key=0];
+39 -> 87  [class="", key=0];
+39 -> 88  [class="", key=0];
+39 -> 89  [class="", key=0];
+39 -> 90  [class="", key=0];
+40 -> "-1"  [class="", key=NONE, label=""];
+42 -> "-1"  [class="", key=NONE, label=""];
+44 -> "-1"  [class="", key=NONE, label=""];
+46 -> "-1"  [class="", key=NONE, label=""];
+50 -> "-1"  [class="", key=NONE, label=""];
+52 -> "-1"  [class="", key=NONE, label=""];
+54 -> "-1"  [class="", key=NONE, label=""];
+56 -> "-1"  [class="", key=NONE, label=""];
+58 -> "-1"  [class="", key=NONE, label=""];
+60 -> "-1"  [class="", key=NONE, label=""];
+61 -> 1  [class="", key=0];
+62 -> 2  [class="", key=0];
+63 -> 4  [class="", key=0];
+64 -> 7  [class="", key=0];
+65 -> 12  [class="", key=0];
+66 -> 25  [class="", key=0];
+67 -> 29  [class="", key=0];
+68 -> 33  [class="", key=0];
+69 -> 37  [class="", key=0];
+70 -> 13  [class="", key=0];
+71 -> 5  [class="", key=0];
+72 -> 4  [class="", key=0];
+73 -> 13  [class="", key=0];
+74 -> 5  [class="", key=0];
+75 -> 5  [class="", key=0];
+76 -> 5  [class="", key=0];
+77 -> 5  [class="", key=0];
+78 -> 5  [class="", key=0];
+79 -> 5  [class="", key=0];
+80 -> 40  [class="", key=0];
+81 -> 42  [class="", key=0];
+82 -> 44  [class="", key=0];
+83 -> 46  [class="", key=0];
+84 -> 5  [class="", key=0];
+85 -> 50  [class="", key=0];
+86 -> 52  [class="", key=0];
+87 -> 54  [class="", key=0];
+88 -> 56  [class="", key=0];
+89 -> 58  [class="", key=0];
+90 -> 60  [class="", key=0];
+}
+`;
+    drawGraph(graph);
+  } else {
+    serveGraph();
+  }
+
+
+</script>
+</body>
+</html>

@@ -23,7 +23,6 @@ responses:
     - text: "O'zbek tilidagi nutqni va matnlarni sun’iy intellekt yordamida qayta ishlash va o'zbek tilida muloqot qiladigan aqlli yordamchi"
   utter_about_ICT_WEEK:
     - text: "“ICT WEEK Uzbekistan” 2004-yildan buyon har yili o'tkazib kelinayotgan eng muhim tadbirlardan biri hisoblanadi. Axborot texnologiyalari haftaligi an’anaviy tarzda bir qator ixtisoslashtirilgan tadbirlarni yagona formatda birlashtiradi. Texnologiyalar haftaligining asosiy vazifasi tajriba almashish, zamonaviy texnologiyalar va innovatsion yutuqlarni namoyish etish uchun platforma yaratishdan iborat. Bundan tashqari, bu O‘zbekiston IT bozorining xorijiy investorlar uchun jozibadorligini, davlat, kompaniyalar va iste’molchilar o‘rtasidagi o‘zaro munosabatlarni yo'lga qo'yish uchun ideal maydondir."
-    -
 
   utter_taqdimot:
     - text: "Tushunarli, hozir yoqaman"
