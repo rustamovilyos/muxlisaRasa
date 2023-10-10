@@ -1,0 +1,126 @@
+version: "3.1"
+
+nlu:
+  - intent: salomlashish
+    examples: |
+      - salom
+      - Muxlisa
+      - muxlisa
+      - Assalomu alaykum
+      - assalomu alaykum
+      - Salom, muxlisa
+      - salom, muxlisa
+      - Salom, Muxlisa
+      - salom, Muxlisa
+      - assalomu alaykum, muxlisa
+      - assalomu alaykum, Muxlisa
+      - qalesan?
+      - qalesan
+      - qalaysan?
+      - qalaysan
+      - shu yerdamisan?
+      - shu yerdamisan, muxlisa?
+      - biz bilanmisan?
+      - biz bilanmisan, muxlisa?
+      - muxlisa, biz bilanmisan?
+      - shettamisan?
+      - shettamisan, muxlisa?
+      - muxlisa, shettamisan?
+
+  - intent: ozingni_tanishtir
+    examples: |
+      - o'zingni tanishtir
+      - Isming kim?
+      - isming nima?
+      - o’zingni mehmonlarga tanishtirsang
+      - o'zingni tanishtirsang
+      - o'zingni mehmonlarga tanishtir
+      - kimsan?
+      - Muxlisa sen kimsan?
+
+  - intent: ICT_WEEK
+    examples: |
+      - ICT WEEK bo'yicha nimani bilasan?
+      - ICT WEEK tog’risida nimalarni bilasan?
+      - ICT WEEK nima?
+      - ICT WEEK to'g'risida gapirib ber
+      - ICT WEEK bu
+      - ICT WEEK to'g'risida aytib ber
+      - ICT WEEK
+      - ICT WEEK bu nima?
+      - ICT WEEK to'g'risida
+
+  - intent: taqdimotni_yoqish
+    examples: |
+      - Yaxshi, endi taqdimotimni yoqib ber
+      - taqdimotni yoqib ber
+      - taqdimotni qo'yib ber
+      - Taqdimotni yoqib ber
+
+  - intent: rahmat
+    examples: |
+      - rahmat
+      - raxmat
+      - minnatdorman
+      - rahmat Muxlisa
+      - rahmat, Muxlisa
+      - raxmat, muxlisa
+      - tashakkur
+      - tashakkur, muxlisa
+      - Tashakkur, Muxlisa
+      - Tashakkur
+
+  - intent: about_uzb
+    examples: |
+      - O'zbekiston to'g'risida nimani bilasan?
+      - O'zbekiston haqida nimani bilasan?
+
+  - intent: about_uzb_independence
+    examples: |
+      - O'zbekiston qachon mustaqil bo'lgan?
+      - O'zbekiston qachon mustaqillikka erishdi?
+      - O'zbekiston qachon mustaqil bo'ldi?
+      - O'zbekiston qachon mustaqil bo'lgan
+      - O'zbekiston
+      - O'zbekiston to'g'risida aytib ber
+      - O'zbekiston to'g'risida
+      - O'zbekiston bu
+      - O'zbekiston haqida
+      - O'zbekiston haqida aytib ber
+
+  - intent: about_AI
+    examples: |
+      - Sun'iy intellekt
+      - Sun'iy intellekt haqida
+      - Sun'iy intellekt bu nima?
+      - Sun'iy intellekt to'g'risida aytib ber
+      - Sun'iy intellekt to'g'risida nimani bilasan?
+
+  - intent: about_author
+    examples: |
+      - Seni kim yaratgan?
+      - Seni kim yaratdi?
+
+  - intent: about_uzinfocom
+    examples: |
+      - Uzinfocom haqida aytib ber
+      - Uzinfocom haqida
+      - Uzinfocom bu
+      - Uzinfocom bu nima
+      - Uzinfocom to'g'risida
+      - Uzinfocom to'g'risida nimani bilasan?
+      - Uzinfocom to'g'risida aytib ber
+      - Uzinfocom
+      
+  - intent: about_MyID
+    examples: |
+      - MyID to'g'risida aytib ber
+      - MyID to'g'risida nimani bilasan?
+      - MyID to'g'risida
+      - MyID bu nima
+      - MyID bu
+      - MyID haqida
+      - MyID haqida aytib ber
+      - MyID haqida nimani bilasan?
+      - MyID
+      

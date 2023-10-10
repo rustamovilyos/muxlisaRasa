@@ -1,0 +1,52 @@
+version: "3.1"
+
+intents:
+  - salomlashish
+  - ozingni_tanishtir
+  - ICT_WEEK
+  - taqdimotni_yoqish
+  - rahmat
+  - about_uzb
+  - about_uzb_independence
+  - about_AI
+  - about_author
+  - about_uzinfocom
+  - about_MyID
+
+responses:
+  utter_salomlashish:
+    - text: "Salom, sizga nima yordam bera olaman?"
+    - text: "Assalomu alaykum, sizga qanday yordam bera olaman?"
+  utter_tanishtirish:
+    - text: "Mening ismim Muxlisa."
+    - text: "Hurmatli mehmonlar, Mening ismim Muxlisa. Men sun'iy intellekt negizida yaratilgan o’zbek tilidagi ovozli yordamchiman. Bugun sizlarga ICT WEEK to’g’risida kerakli ma’lumotlarni berishim mumkin. Sizni nimalar qiziqtirmoqda?"
+    - text: "O'zbek tilidagi nutqni va matnlarni sun’iy intellekt yordamida qayta ishlash va o'zbek tilida muloqot qiladigan aqlli yordamchi"
+  utter_about_ICT_WEEK:
+    - text: "“ICT WEEK Uzbekistan” 2004-yildan buyon har yili o'tkazib kelinayotgan eng muhim tadbirlardan biri hisoblanadi. Axborot texnologiyalari haftaligi an’anaviy tarzda bir qator ixtisoslashtirilgan tadbirlarni yagona formatda birlashtiradi. Texnologiyalar haftaligining asosiy vazifasi tajriba almashish, zamonaviy texnologiyalar va innovatsion yutuqlarni namoyish etish uchun platforma yaratishdan iborat. Bundan tashqari, bu O‘zbekiston IT bozorining xorijiy investorlar uchun jozibadorligini, davlat, kompaniyalar va iste’molchilar o‘rtasidagi o‘zaro munosabatlarni yo'lga qo'yish uchun ideal maydondir."
+    -
+
+  utter_taqdimot:
+    - text: "Tushunarli, hozir yoqaman"
+  utter_rahmat:
+    - text: "agar yana qandaydir yordam kerak bo’lsa men shu yerda bo’laman, mehmonlarni choyiga qarab turaman"
+    - text: "ajoyib, kerak bo’lsam shu yerdaman"
+    - text: "arzimaydi, menga xizmatlar bo’lmasa boshqa loyihalar bilan tanishib chiqmoqchi edim"
+  utter_about_uzb:
+    - text: "Oʻzbekiston Markaziy Osiyodagi davlat boʻlib, boshqa beshta davlat oʻrtasida joylashgan: shimolda Qozogʻiston, janubda Turkmaniston, sharqda Tojikiston, shimoli-sharqda Qirgʻiziston va janubda Afgʻoniston. Oʻzbekiston poytaxti — Toshkent shahri."
+  utter_about_uzb_independence:
+    - text: "O‘zbekiston 1991-yilda Sovet Ittifoqi parchalanganidan keyin mustaqil respublika bo‘ldi."
+    - text: "O‘zbekiston 1991-yilda mustaqil bo‘lgan."
+  utter_about_AI:
+    - text: "Sun'iy intellekt - bu kompyuter fanining bo'limi bo'lib, u odatda inson aqlini talab qiladigan vazifalarni bajarishga qodir bo'lgan dasturlar va tizimlarni yaratish bilan shug'ullanadi. Sun'iy intellekt o'ylash, o'rganish, qaror qabul qilish va odamlar bajaradigan vazifalarga o'xshash vazifalarni bajarishga qodir kompyuter tizimlarini yaratishga intiladi."
+  utter_about_author:
+    - text: "Meni davlat axborot tizimlarini yaratish va qo'llab-quvvatlash bo'yicha yagona integrator Uzinfocom yaratgan"
+  utter_about_uzinfocom:
+    - text: "Raqamlashtirishning eng muhim asosiy jihatlaridan biri ma’lumotlarni qayta ishlash, boshqarish va saqlash uchun kuchli bazani yaratishdir. Shu maqsadda Yagona integrator UZINFOCOM tuzildi, uning vazifalariga davlat axborot tizimlarini yaratish va qo‘llab-quvvatlash kiradi. Bugungi kunda UZINFOCOM zamonaviy texnologiyalar va yechimlardan foydalangan holda davlat va xususiy sektorni raqamlashtirish bo‘yicha keng ko‘lamli loyihalarni amalga oshiruvchi AKT sohasining asosiy korxonasi hisoblanadi."
+  utter_about_MyID:
+    - text: "MyID yuzning unikal biometrik parametrlariga asoslangan jismoniy shaxslarning haqiqiy identifikatsiyasi va autentifikatsiyasini ta'minlab, ularga masofadan turib yoki bevosita ishtiroki bilan bank va boshqa xizmatlardan vakolatli tarzda foydalanish imkoniyatini taqdim etadi."
+    - text: "MyID - bu yuzning unikal biometrik parametrlariga asoslangan jismoniy shaxslarning haqiqiy identifikatsiyasi va autentifikatsiyasini ta'minlab, ularga masofadan turib yoki bevosita ishtiroki bilan bank va boshqa xizmatlardan vakolatli tarzda foydalanish imkoniyatini taqdim etadi."
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

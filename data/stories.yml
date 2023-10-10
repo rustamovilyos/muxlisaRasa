@@ -1,0 +1,108 @@
+version: "3.1"
+
+stories:
+
+- story: hello
+  steps:
+  - intent: salomlashish
+  - action: utter_salomlashish
+  - intent: ozini_tanishtirish
+  - action: utter_tanishtirish
+
+- story: turn on presentation
+  steps:
+  - intent: salomlashish
+  - action: utter_salomlashish
+  - intent: taqdimotni_yoqish
+  - action: utter_taqdimot
+  - intent: rahmat
+  - action: utter_rahmat
+
+- story: ICT WEEK haqida
+  steps:
+  - intent: salomlashish
+  - action: utter_salomlashish
+  - intent: ICT_WEEK
+  - action: utter_about_ICT_WEEK
+  - intent: taqdimotni_yoqish
+  - action: utter_taqdimot
+  - intent: rahmat
+  - action: utter_rahmat
+
+- story: about Uzbekistan
+  steps:
+    - intent: salomlashish
+    - action: utter_salomlashish
+    - intent: ozini_tanishtirish
+    - action: utter_tanishtirish
+    - intent: about_uzb
+    - action: utter_about_uzb
+    - intent: about_uzb_independence
+    - action: utter_about_uzb_independence
+    - intent: rahmat
+    - action: utter_rahmat
+
+- story: about Uzbekistan independence
+  steps:
+    - intent: salomlashish
+    - action: utter_salomlashish
+    - intent: ozini_tanishtirish
+    - action: utter_tanishtirish
+    - intent: about_uzb_independence
+    - action: utter_about_uzb_independence
+    - intent: rahmat
+    - action: utter_rahmat
+
+- story: about Uzbekistan
+  steps:
+    - intent: salomlashish
+    - action: utter_salomlashish
+    - intent: ozini_tanishtirish
+    - action: utter_tanishtirish
+    - intent: about_uzb
+    - action: utter_about_uzb
+    - intent: rahmat
+    - action: utter_rahmat
+
+- story: about AI
+  steps:
+    - intent: salomlashish
+    - action: utter_salomlashish
+    - intent: ozini_tanishtirish
+    - action: utter_tanishtirish
+    - intent: about_AI
+    - action: utter_about_AI
+    - intent: rahmat
+
+- story: about author
+  steps:
+      - intent: salomlashish
+      - action: utter_salomlashish
+      - intent: ozini_tanishtirish
+      - action: utter_tanishtirish
+      - intent: about_author
+      - action: utter_about_author
+      - intent: rahmat
+      - action: utter_rahmat
+
+- story: about Uzinfocom
+  steps:
+      - intent: salomlashish
+      - action: utter_salomlashish
+      - intent: ozini_tanishtirish
+      - action: utter_tanishtirish
+      - intent: about_uzinfocom
+      - action: utter_about_uzinfocom
+      - intent: rahmat
+      - action: utter_rahmat
+
+- story: about MyID
+  steps:
+      - intent: salomlashish
+      - action: utter_salomlashish
+      - intent: ozini_tanishtirish
+      - action: utter_tanishtirish
+      - intent: about_MyID
+      - action: utter_about_MyID
+      - intent: rahmat
+      - action: utter_rahmat
