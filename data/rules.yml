@@ -5,54 +5,66 @@ rules:
 - rule: User say hello
   steps:
   - intent: salomlashish
-  - action: utter_salomlashish
+#  - action: utter_salomlashish
+  - action: action_check_exist_questions
 
 - rule: User say introduce
   steps:
   - intent: ozingni_tanishtir
-  - action: utter_tanishtirish
+#  - action: utter_tanishtirish
+  - action: action_check_exist_questions
 
 - rule: User say thanks
   steps:
   - intent: rahmat
-  - action: utter_rahmat
+  - action: action_check_exist_questions
+#  - action: utter_rahmat
 
 - rule: User aks turn on presentation
   steps:
   - intent: taqdimotni_yoqish
-  - action: utter_taqdimot
+#  - action: utter_taqdimot
+  - action: action_check_exist_questions
 
 - rule: User ask about ICT WEEK
   steps:
   - intent: ICT_WEEK
-  - action: utter_about_ICT_WEEK
+#  - action: utter_about_ICT_WEEK
+  - action: action_check_exist_questions
 
 - rule: User ask about Uzbekistan
   steps:
   - intent: about_uzb
-  - action: utter_about_uzb
+#  - action: utter_about_uzb
+  - action: action_check_exist_questions
 
 - rule: User ask about Uzbekistan independence
   steps:
   - intent: about_uzb_independence
-  - action: utter_about_uzb_independence
+#  - action: utter_about_uzb_independence
+  - action: action_check_exist_questions
 
 - rule: User ask about AI(artificial intelligence)
   steps:
   - intent: about_AI
-  - action: utter_about_AI
+#  - action: utter_about_AI
+  - action: action_check_exist_questions
 
 - rule: User ask about author
   steps:
     - intent: about_author
-    - action: utter_about_author
+#    - action: utter_about_author
+    - action: action_check_exist_questions
+
 
 - rule: User ask about Uzinfocom
   steps:
     - intent: about_uzinfocom
-    - action: utter_about_uzinfocom
+    - action: action_check_exist_questions
+#    - action: utter_about_uzinfocom
 
 - rule: User ask about MyID
   steps:
     - intent: about_MyID
-    - action: utter_about_MyID
+    - action: action_check_exist_questions
+#    - action: utter_about_MyID

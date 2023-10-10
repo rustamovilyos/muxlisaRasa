@@ -5,105 +5,143 @@ stories:
 - story: hello
   steps:
   - intent: salomlashish
-  - action: utter_salomlashish
+#  - action: utter_salomlashish
+  - action: action_check_exist_questions
   - intent: ozingni_tanishtir
-  - action: utter_tanishtirish
+#  - action: utter_tanishtirish
+  - action: action_check_exist_questions
 
 - story: turn on presentation
   steps:
   - intent: salomlashish
-  - action: utter_salomlashish
+#  - action: utter_salomlashish
+  - action: action_check_exist_questions
   - intent: taqdimotni_yoqish
-  - action: utter_taqdimot
+#  - action: utter_taqdimot
+  - action: action_check_exist_questions
   - intent: rahmat
-  - action: utter_rahmat
+#  - action: utter_rahmat
+  - action: action_check_exist_questions
 
 - story: ICT WEEK haqida
   steps:
   - intent: salomlashish
-  - action: utter_salomlashish
+#  - action: utter_salomlashish
+  - action: action_check_exist_questions
   - intent: ICT_WEEK
-  - action: utter_about_ICT_WEEK
+#  - action: utter_about_ICT_WEEK
+  - action: action_check_exist_questions
   - intent: taqdimotni_yoqish
-  - action: utter_taqdimot
+#  - action: utter_taqdimot
+  - action: action_check_exist_questions
   - intent: rahmat
-  - action: utter_rahmat
+#  - action: utter_rahmat
+  - action: action_check_exist_questions
 
 - story: about Uzbekistan
   steps:
     - intent: salomlashish
-    - action: utter_salomlashish
+#    - action: utter_salomlashish
+    - action: action_check_exist_questions
     - intent: ozingni_tanishtir
-    - action: utter_tanishtirish
+#    - action: utter_tanishtirish
+    - action: action_check_exist_questions
     - intent: about_uzb
-    - action: utter_about_uzb
+#    - action: utter_about_uzb
+    - action: action_check_exist_questions
     - intent: about_uzb_independence
-    - action: utter_about_uzb_independence
+#    - action: utter_about_uzb_independence
+    - action: action_check_exist_questions
     - intent: rahmat
-    - action: utter_rahmat
+#    - action: utter_rahmat
+    - action: action_check_exist_questions
 
 - story: about Uzbekistan independence
   steps:
     - intent: salomlashish
-    - action: utter_salomlashish
+#    - action: utter_salomlashish
+    - action: action_check_exist_questions
     - intent: ozingni_tanishtir
-    - action: utter_tanishtirish
+#    - action: utter_tanishtirish
+    - action: action_check_exist_questions
     - intent: about_uzb_independence
-    - action: utter_about_uzb_independence
+#    - action: utter_about_uzb_independence
+    - action: action_check_exist_questions
     - intent: rahmat
-    - action: utter_rahmat
+#    - action: utter_rahmat
+    - action: action_check_exist_questions
 
 - story: about Uzbekistan
   steps:
     - intent: salomlashish
-    - action: utter_salomlashish
+#    - action: utter_salomlashish
+    - action: action_check_exist_questions
     - intent: ozingni_tanishtir
-    - action: utter_tanishtirish
+#    - action: utter_tanishtirish
+    - action: action_check_exist_questions
     - intent: about_uzb
-    - action: utter_about_uzb
+#    - action: utter_about_uzb
+    - action: action_check_exist_questions
     - intent: rahmat
-    - action: utter_rahmat
+#    - action: utter_rahmat
+    - action: action_check_exist_questions
 
 - story: about AI
   steps:
     - intent: salomlashish
-    - action: utter_salomlashish
+#    - action: utter_salomlashish
+    - action: action_check_exist_questions
     - intent: ozingni_tanishtir
-    - action: utter_tanishtirish
+#    - action: utter_tanishtirish
+    - action: action_check_exist_questions
     - intent: about_AI
-    - action: utter_about_AI
+#    - action: utter_about_AI
+    - action: action_check_exist_questions
     - intent: rahmat
-    - action: utter_rahmat
+#    - action: utter_rahmat
+    - action: action_check_exist_questions
 
 - story: about author
   steps:
       - intent: salomlashish
-      - action: utter_salomlashish
+#      - action: utter_salomlashish
+      - action: action_check_exist_questions
       - intent: ozingni_tanishtir
-      - action: utter_tanishtirish
+#      - action: utter_tanishtirish
+      - action: action_check_exist_questions
       - intent: about_author
-      - action: utter_about_author
+#      - action: utter_about_author
+      - action: action_check_exist_questions
       - intent: rahmat
-      - action: utter_rahmat
+#      - action: utter_rahmat
+      - action: action_check_exist_questions
 
 - story: about Uzinfocom
   steps:
       - intent: salomlashish
-      - action: utter_salomlashish
+#      - action: utter_salomlashish
+      - action: action_check_exist_questions
       - intent: ozingni_tanishtir
-      - action: utter_tanishtirish
+#      - action: utter_tanishtirish
+      - action: action_check_exist_questions
       - intent: about_uzinfocom
-      - action: utter_about_uzinfocom
+#      - action: utter_about_uzinfocom
+      - action: action_check_exist_questions
       - intent: rahmat
-      - action: utter_rahmat
+      - action: action_check_exist_questions
+#      - action: utter_rahmat
 
 - story: about MyID
   steps:
       - intent: salomlashish
-      - action: utter_salomlashish
+#      - action: utter_salomlashish
+      - action: action_check_exist_questions
       - intent: ozingni_tanishtir
-      - action: utter_tanishtirish
+#      - action: utter_tanishtirish
+      - action: action_check_exist_questions
       - intent: about_MyID
-      - action: utter_about_MyID
+#      - action: utter_about_MyID
+      - action: action_check_exist_questions
       - intent: rahmat
-      - action: utter_rahmat
+      - action: action_check_exist_questions
+#      - action: utter_rahmat
