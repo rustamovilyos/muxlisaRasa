@@ -45,6 +45,8 @@ responses:
     - text: "MyID yuzning unikal biometrik parametrlariga asoslangan jismoniy shaxslarning haqiqiy identifikatsiyasi va autentifikatsiyasini ta'minlab, ularga masofadan turib yoki bevosita ishtiroki bilan bank va boshqa xizmatlardan vakolatli tarzda foydalanish imkoniyatini taqdim etadi."
     - text: "MyID - bu yuzning unikal biometrik parametrlariga asoslangan jismoniy shaxslarning haqiqiy identifikatsiyasi va autentifikatsiyasini ta'minlab, ularga masofadan turib yoki bevosita ishtiroki bilan bank va boshqa xizmatlardan vakolatli tarzda foydalanish imkoniyatini taqdim etadi."
 
+actions:
+  - action_check_exist_questions
 
 session_config:
   session_expiration_time: 60
