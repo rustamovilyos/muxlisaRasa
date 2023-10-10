@@ -28,8 +28,6 @@ responses:
     - text: "Tushunarli, hozir yoqaman"
   utter_rahmat:
     - text: "agar yana qandaydir yordam kerak bo’lsa men shu yerda bo’laman, mehmonlarni choyiga qarab turaman"
-    - text: "ajoyib, kerak bo’lsam shu yerdaman"
-    - text: "arzimaydi, menga xizmatlar bo’lmasa boshqa loyihalar bilan tanishib chiqmoqchi edim"
   utter_about_uzb:
     - text: "Oʻzbekiston Markaziy Osiyodagi davlat boʻlib, boshqa beshta davlat oʻrtasida joylashgan: shimolda Qozogʻiston, janubda Turkmaniston, sharqda Tojikiston, shimoli-sharqda Qirgʻiziston va janubda Afgʻoniston. Oʻzbekiston poytaxti — Toshkent shahri."
   utter_about_uzb_independence:
@@ -47,6 +45,7 @@ responses:
 
 actions:
   - action_check_exist_questions
+  - action_default_fallback
 
 session_config:
   session_expiration_time: 60
